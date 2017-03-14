@@ -44,33 +44,39 @@ module.exports = function(header, props, column, event){
         constrainTo: headerRegion.expand({ top: true, bottom: true}),
 
         onDragStart: function(event, config){
-
-            var columnHeaders = headerNode.querySelectorAll('.' + props.cellClassName)
-
-            columnData = props.columns.map(function(column, i){
-                var region = Region.from(columnHeaders[i])
-
-                if (column === dragColumn){
-                    dragColumnIndex = i
-                    shiftRegion = region.clone()
-                }
-
-                return {
-                    column: column,
-                    index: i,
-                    region: region
-                }
-            })
-
-            header.setState({
-                dragColumn: column,
-                dragging  : true
-            })
-
-            config.columnData = columnData
-
+            // nope
         },
         onDrag: function(event, config){
+            if (!header.state.dragging) {
+                if (Math.abs(config.diff.left) <= 3) {
+                    return;
+                }
+
+                var columnHeaders = headerNode.querySelectorAll('.' + props.cellClassName)
+
+                columnData = props.columns.map(function(column, i){
+                    var region = Region.from(columnHeaders[i])
+
+                    if (column === dragColumn){
+                        dragColumnIndex = i
+                        shiftRegion = region.clone()
+                    }
+
+                    return {
+                        column: column,
+                        index: i,
+                        region: region
+                    }
+                })
+
+                header.setState({
+                    dragColumn: column,
+                    dragging  : true
+                })
+
+                config.columnData = columnData
+            }
+
             var diff = config.diff.left
             var directionSign = diff < 0? -1: 1
             var state = {
@@ -130,7 +136,9 @@ module.exports = function(header, props, column, event){
         },
 
         onDrop: function(event){
-            header.onDrop(event)
+            if (header.state.dragging) {
+                header.onDrop(event)
+            }
         }
     })
 }
