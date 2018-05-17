@@ -3445,13 +3445,6 @@ react-hot-loader@^1.2.7:
     react-hot-api "^0.4.5"
     source-map "^0.4.4"
 
-react-load-mask@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-load-mask/-/react-load-mask-1.0.1.tgz#8ef090193149f97967c58ae6e94726318dcc040d"
-  dependencies:
-    object-assign "^2.0.0"
-    react-style-normalizer "^1.1.3"
-
 react-menus@^2.0.5:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/react-menus/-/react-menus-2.0.8.tgz#84f0adcd53a76b948e78a7e1a7643c60394af490"
@@ -3474,19 +3467,19 @@ react-simple-toolbar@^1.0.5:
     react-clonewithprops "^1.0.1"
     react-style-normalizer "^1.2.6"
 
-react-style-normalizer@^1.1.3, react-style-normalizer@^1.2.0, react-style-normalizer@^1.2.6, react-style-normalizer@^1.2.7, react-style-normalizer@^1.2.8:
+react-style-normalizer@^1.2.0, react-style-normalizer@^1.2.6, react-style-normalizer@^1.2.7, react-style-normalizer@^1.2.8:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/react-style-normalizer/-/react-style-normalizer-1.2.8.tgz#7e84b3d25cea6225545c5af68963b225885344a2"
 
-"react-virtual-scroller@github:janv/react-virtual-scroller#find-dom-node-fix":
+"react-virtual-scroller@github:enoshixi/react-virtual-scroller#8c1c9f6386d3858a85136b02f36101d292fcbd66":
   version "2.0.1"
-  resolved "https://codeload.github.com/janv/react-virtual-scroller/tar.gz/7d19cf17d0ceb1b322f32f4d212a0674319bb16e"
+  resolved "https://codeload.github.com/enoshixi/react-virtual-scroller/tar.gz/8c1c9f6386d3858a85136b02f36101d292fcbd66"
   dependencies:
     drag-helper "^1.2.3"
     has-touch "^1.0.1"
     object-assign "^4.0.1"
+    prop-types "^15.6.1"
     react-class "^1.1.2"
-    react-load-mask "^1.0.1"
     react-style-normalizer "^1.2.7"
 
 react@^15.1.0:
