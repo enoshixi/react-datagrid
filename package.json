@@ -80,7 +80,7 @@
     "react-menus": "^2.0.5",
     "react-simple-toolbar": "^1.0.5",
     "react-style-normalizer": "^1.2.8",
-    "react-virtual-scroller": "github:janv/react-virtual-scroller#find-dom-node-fix",
+    "react-virtual-scroller": "github:enoshixi/react-virtual-scroller#8c1c9f6386d3858a85136b02f36101d292fcbd66",
     "region": "^2.1.2",
     "region-align": "^2.1.2",
     "ustring": "^1.4.1",
