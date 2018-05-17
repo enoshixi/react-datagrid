@@ -11,6 +11,9 @@ var findIndexByName = require('../utils/findIndexByName')
 var Cell    = require('../Cell')
 var setupColumnDrag   = require('./setupColumnDrag')
 var setupColumnResize = require('./setupColumnResize')
+var createClass = require("create-react-class");
+var propTypes = require("prop-types");
+
 
 var normalize   = require('react-style-normalizer')
 
@@ -54,12 +57,12 @@ function getDropState(){
     }
 }
 
-module.exports = React.createClass({
+module.exports = createClass({
 
     displayName: 'ReactDataGrid.Header',
 
     propTypes: {
-        columns: React.PropTypes.array
+        columns: propTypes.array
     },
 
     onDrop: function(event){

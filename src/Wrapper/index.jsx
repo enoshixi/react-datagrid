@@ -3,19 +3,21 @@
 var React    = require('react')
 var assign   = require('object-assign')
 var Scroller = require('react-virtual-scroller')
+var createClass = require("create-react-class");
+var propTypes = require("prop-types");
 
 function emptyFn(){}
 
-module.exports = React.createClass({
+module.exports = createClass({
 
     displayName: 'ReactDataGrid.Wrapper',
 
     propTypes: {
-        scrollLeft   : React.PropTypes.number,
-        scrollTop    : React.PropTypes.number,
-        scrollbarSize: React.PropTypes.number,
-        rowHeight   : React.PropTypes.any,
-        renderCount : React.PropTypes.number
+        scrollLeft   : propTypes.number,
+        scrollTop    : propTypes.number,
+        scrollbarSize: propTypes.number,
+        rowHeight   : propTypes.any,
+        renderCount : propTypes.number
     },
 
     getDefaultProps: function(){

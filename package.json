@@ -59,12 +59,14 @@
     "should": "^7.1.1",
     "sorty": "^1.2.0",
     "style-loader": "^0.13.0",
-    "stylus-loader": "^1.4.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "webpack": "^1.9.12",
     "webpack-dev-server": "^1.9.0"
   },
   "dependencies": {
     "clone": "^1.0.2",
+    "create-react-class": "^15.6.3",
     "css-utils": "^1.0.0",
     "drag-helper": "^1.2.3",
     "es6-promise": "^3.0.2",
@@ -73,8 +75,8 @@
     "node-uuid": "^1.4.3",
     "normalize.css": "^3.0.3",
     "object-assign": "^4.0.1",
+    "prop-types": "^15.6.1",
     "react-class": "^1.2.4",
-    "react-load-mask": "^2.0.1",
     "react-menus": "^2.0.5",
     "react-simple-toolbar": "^1.0.5",
     "react-style-normalizer": "^1.2.8",
@@ -85,8 +87,8 @@
     "whatwg-fetch": "^0.10.0"
   },
   "peerDependencies": {
-    "react": ">=0.14.0 || >=15.0.0",
-    "react-dom": ">=0.14.0 || >=15.0.0"
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
   },
   "author": "ZippyUI <contact@zippyui.com>",
   "contributors": [],

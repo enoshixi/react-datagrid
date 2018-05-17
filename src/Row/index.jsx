@@ -8,15 +8,17 @@ var Cell        = require('../Cell')
 var CellFactory = React.createFactory(Cell)
 var ReactMenu = require('react-menus')
 var ReactMenuFactory = React.createFactory(ReactMenu)
+var createClass = require("create-react-class");
+var propTypes = require("prop-types");
 
-module.exports = React.createClass({
+module.exports = createClass({
 
   displayName: 'ReactDataGrid.Row',
 
   propTypes: {
-    data   : React.PropTypes.object,
-    columns: React.PropTypes.array,
-    index  : React.PropTypes.number
+    data   : propTypes.object,
+    columns: propTypes.array,
+    index  : propTypes.number
   },
 
   getDefaultProps: function(){
@@ -33,7 +35,7 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var props = this.prepareProps(this.props)
+    var props = this.prepareProps(this.props);
     var cells = props.children || props.columns
             .map(this.renderCell.bind(this, this.props))
 
@@ -51,8 +53,18 @@ module.exports = React.createClass({
     props.onContextMenu = this.handleContextMenu
     props.onClick = this.handleRowClick
 
-    delete props.data
+    delete props.cellFactory;
     delete props.cellPadding
+    delete props.data;
+    delete props.defaultStyle;
+    delete props.minWidth;
+    delete props._onClick;
+    delete props.renderCell;
+    delete props.renderText;
+    delete props.rowContextMenu;
+    delete props.rowHeight;
+    delete props.selectedClassName;
+    delete props.showMenu;
 
     return props
   },

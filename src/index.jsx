@@ -2,12 +2,11 @@
 
 require('es6-promise').polyfill()
 
-
 import { findDOMNode } from 'react-dom'
 import React from 'react'
 
 var assign   = require('object-assign')
-import LoadMask from 'react-load-mask'
+var LoadMask = () => null;
 var Region   = require('region')
 
 var PaginationToolbar = React.createFactory(require('./PaginationToolbar'))
@@ -29,6 +28,9 @@ var getGroupedRows = require('./render/getGroupedRows')
 var renderMenu     = require('./render/renderMenu')
 
 var preventDefault = require('./utils/preventDefault')
+var createClass = require("create-react-class");
+var propTypes = require("prop-types");
+var DOM = require("./domFactories");
 
 var isArray = Array.isArray
 
@@ -79,7 +81,7 @@ function findColumn(columns, column){
     }
 }
 
-module.exports = React.createClass({
+module.exports = createClass({
 
     displayName: 'ReactDataGrid',
 
@@ -89,25 +91,25 @@ module.exports = React.createClass({
     ],
 
     propTypes: {
-        loading          : React.PropTypes.bool,
-        virtualRendering : React.PropTypes.bool,
+        loading          : propTypes.bool,
+        virtualRendering : propTypes.bool,
 
         //specify false if you don't want any column to be resizable
-        resizableColumns : React.PropTypes.bool,
-        filterable: React.PropTypes.bool,
+        resizableColumns : propTypes.bool,
+        filterable: propTypes.bool,
 
         //specify false if you don't want column menus to be displayed
-        withColumnMenu   : React.PropTypes.bool,
-        cellEllipsis     : React.PropTypes.bool,
-        sortable         : React.PropTypes.bool,
-        loadMaskOverHeader : React.PropTypes.bool,
-        idProperty       : React.PropTypes.string.isRequired,
+        withColumnMenu   : propTypes.bool,
+        cellEllipsis     : propTypes.bool,
+        sortable         : propTypes.bool,
+        loadMaskOverHeader : propTypes.bool,
+        idProperty       : propTypes.string.isRequired,
 
         //you can customize the column menu by specifying a factory
-        columnMenuFactory: React.PropTypes.func,
-        onDataSourceResponse: React.PropTypes.func,
-        onDataSourceSuccess: React.PropTypes.func,
-        onDataSourceError: React.PropTypes.func,
+        columnMenuFactory: propTypes.func,
+        onDataSourceResponse: propTypes.func,
+        onDataSourceSuccess: propTypes.func,
+        onDataSourceError: propTypes.func,
 
         /**
          * @cfg {Number/String} columnMinWidth=50
@@ -376,7 +378,7 @@ module.exports = React.createClass({
     },
 
     prepareFooter: function(props, state){
-        return (props.footerFactory || React.DOM.div)({
+        return (props.footerFactory || DOM.div)({
             className: 'z-footer-wrapper'
         })
     },
